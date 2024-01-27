@@ -2,20 +2,11 @@ module AdminPermisson
     def edit_users_profile
       puts "Admin updated all users profile"
     end
-    
-    def admin_login
-      puts "Admin logged in."
-    end
-
 end
   
 module BuyerPermission
     def buy
       puts "Buyer has bought an item"
-    end
-
-    def buyer_login
-      puts "Buyer logged in."
     end
 end
   
@@ -28,14 +19,15 @@ class User
         @ip_address = ip_address
     end
   
-    def change_password
-      password = change_password
-      puts "New password is #@{password}"
+    def change_password=(new_password)
+      @new_password = new_password
+      password = new_password
+      puts "New password is #{@password}"
     end
 
     protected
     def login
-      puts "User logged in. IP address: #@{ip_address}"
+      puts "User logged in. IP address: #{@ip_address}"
     end
   end
   
@@ -43,11 +35,19 @@ class User
   class Admin < User
     include AdminPermisson
 
+    def admin_login
+      login
+    end
+
   end
   
   
   class Buyer < User
     include BuyerPermission
+
+    def buyer_login
+      login
+    end
   end
   
   
