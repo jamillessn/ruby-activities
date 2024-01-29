@@ -39,7 +39,7 @@ DELETE FROM students WHERE id=6;
 
 -- 2ND PART OF ACTIVITY
 
-SELECT COUNT(id) from students
-SELECT first_name from students where location = 'Manila'
-Select AVG(age) as average_age from students
+SELECT COUNT(id) from students;
+SELECT first_name from students where location = 'Manila';
+SELECT AVG(age) as average_age from students;
 SELECT * from students ORDER BY age DESC; 
