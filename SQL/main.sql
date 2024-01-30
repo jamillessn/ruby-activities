@@ -41,5 +41,5 @@ DELETE FROM students WHERE id=6;
 
 SELECT COUNT(id) from students;
 SELECT first_name from students where location = 'Manila';
-SELECT AVG(age) as average_age from students;
+SELECT ROUND(AVG(age),2) as average_age from students;
 SELECT * from students ORDER BY age DESC; 
