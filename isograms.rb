@@ -25,3 +25,20 @@ def is_isogram(str)
 puts is_isogram("Dermatoglyphics")
 puts is_isogram("aba")
 puts is_isogram("moOse")
+
+
+#EACH VERSION
+# def is_isogram(str)
+#   str = str.downcase
+#   string_length = str.length
+
+#   (0...string_length - 1).each do |counter|
+#     current_char = str[counter]
+
+#     (counter + 1...string_length).each do |inner_counter|
+#       return false if current_char == str[inner_counter]
+#     end
+#   end
+
+#   true
+# end
